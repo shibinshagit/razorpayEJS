@@ -91,8 +91,7 @@
             var formData = new FormData(e.target);
             var name = formData.get('name');
             var email = formData.get('email');
-console.log('aaoolo',name, email)
-            fetch('http://localhost:3000/create-order', {
+            fetch('https://razorpayejs.onrender.com/create-order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -109,7 +108,7 @@ console.log('aaoolo',name, email)
                     "description": "Test Transaction",
                     "order_id": data.id, // This is a sample Order ID. Pass the `id` obtained in the response of createOrder API
                     "handler": function (response){
-                        fetch('http://localhost:3000/payment-success', {
+                        fetch('https://razorpayejs.onrender.com/payment-success', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
